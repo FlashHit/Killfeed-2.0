@@ -1,0 +1,9 @@
+{
+	"Name": "Killfeed 2.0",
+	"Authors": ["Flash_Hit", "KVN"],
+	"Description": "Killfeed with roadkill icon and headshot icon + shows player connected and player left events.",
+	"URL": "none",
+	"Version": "1.0.0",
+	"HasWebUI": true,
+	"HasVeniceEXT": true
+}
