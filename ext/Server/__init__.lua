@@ -333,3 +333,7 @@ end)
 Events:Subscribe('Server:RoundOver', function(roundTime, winningTeam)
     NetEvents:Broadcast('Server:RoundOver')
 end)
+
+Events:Subscribe('Server:RoundReset', function()
+    NetEvents:Broadcast('Server:RoundReset')
+end)
