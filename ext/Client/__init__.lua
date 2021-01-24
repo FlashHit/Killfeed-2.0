@@ -33,6 +33,11 @@ NetEvents:Subscribe('Killfeed', function(p_Args)
 	local s_PlayerRelation = GetPlayerRelation(s_LocalPlayer.teamId, s_LocalPlayer.squadId, s_PlayerTeam, s_PlayerSquad)
 	local s_InflictorRelation = GetPlayerRelation(s_LocalPlayer.teamId, s_LocalPlayer.squadId, s_InflictorTeam, s_InflictorSquad)
 
+	if s_PlayerName == s_InflictorName then
+		s_PlayerName = ""
+		s_PlayerRelation = ""
+	end
+
 	local s_Table = {
 		playerName = s_PlayerName,
 		playerRelation = s_PlayerRelation,
