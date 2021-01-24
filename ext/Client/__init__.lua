@@ -2,6 +2,10 @@ local s_EndOfRound = false
 local s_LevelLoaded = true
 local s_CumulatedTime = 0
 
+Events:Subscribe('Extension:Loaded', function()
+	WebUI:Init()
+end)
+
 NetEvents:Subscribe('Killfeed', function(p_Args)
 	
 	local s_PlayerName = p_Args[1]
