@@ -28,8 +28,16 @@ NetEvents:Subscribe('Killfeed', function(p_Args)
 	
 	local s_PlayerRelation = GetPlayerRelation(s_LocalPlayer.teamId, s_LocalPlayer.squadId, s_PlayerTeam, s_PlayerSquad)
 	local s_InflictorRelation = GetPlayerRelation(s_LocalPlayer.teamId, s_LocalPlayer.squadId, s_InflictorTeam, s_InflictorSquad)
-	
-	local s_Table = {s_PlayerName, s_InflictorName, s_PlayerRelation, s_InflictorRelation, s_Weapon, s_IsRoadKill, s_IsHeadShot, s_WasVictimInReviveState}
+
+	local s_Table = {
+		playerName = s_PlayerName,
+		playerRelation = s_PlayerRelation,
+		inflictorName = s_InflictorName,
+		inflictorRelation = s_InflictorRelation,
+		weapon = s_Weapon,
+		isRoadkill = s_IsRoadKill,
+		isHeadshot = s_IsHeadShot
+	}
 	WebUI:ExecuteJS(string.format("OnKill('%s')", json.encode(s_Table)))
 	
 end)
@@ -45,7 +53,10 @@ Events:Subscribe('Player:Connected', function(p_Player)
 	if s_LocalPlayer ~= nil and s_LocalPlayer.name ~= p_Player.name then
 		
 		local s_PlayerRelation = GetPlayerRelation(s_LocalPlayer.teamId, s_LocalPlayer.squadId, p_Player.teamId, p_Player.squadId)
-		local s_Table = {p_Player.name, s_PlayerRelation}
+		local s_Table = { 
+			playerName = p_Player.name, 
+			playerRelation = s_PlayerRelation
+		}
 		WebUI:ExecuteJS(string.format("OnConnected('%s')", json.encode(s_Table)))
 	
 	end
@@ -63,7 +74,10 @@ Events:Subscribe('Player:Deleted', function(p_Player)
 	if s_LocalPlayer ~= nil and s_LocalPlayer.name ~= p_Player.name then
 		
 		local s_PlayerRelation = GetPlayerRelation(s_LocalPlayer.teamId, s_LocalPlayer.squadId, p_Player.teamId, p_Player.squadId)
-		local s_Table = {p_Player.name, s_PlayerRelation}
+		local s_Table = { 
+			playerName = p_Player.name, 
+			playerRelation = s_PlayerRelation
+		}
 		WebUI:ExecuteJS(string.format("OnLeft('%s')", json.encode(s_Table)))
 	
 	end
