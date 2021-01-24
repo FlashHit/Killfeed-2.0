@@ -122,6 +122,10 @@ NetEvents:Subscribe('Server:RoundOver', function()
     s_EndOfRound = true
 end)
 
+NetEvents:Subscribe('Server:RoundReset', function()
+    s_EndOfRound = true
+end)
+
 Events:Subscribe('Level:Destroy', function()
     s_EndOfRound = true
 end)
