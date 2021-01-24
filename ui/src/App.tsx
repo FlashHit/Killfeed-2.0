@@ -81,7 +81,7 @@ const App: React.FC = () => {
         
         interval = setTimeout(() => {
             setShowFeed(false);
-        }, 3000);
+        }, 4000);
 
         return () => {
             clearTimeout(interval);
@@ -90,6 +90,7 @@ const App: React.FC = () => {
 
     /* Window */
     window.OnKill = (p_DataJson: any) => {
+        p_DataJson = JSON.parse(p_DataJson);
         addKill({
             type: 'kill',
             playerName: p_DataJson.playerName,
@@ -103,6 +104,7 @@ const App: React.FC = () => {
     }
 
     window.OnConnected = (p_DataJson: any) => {
+        p_DataJson = JSON.parse(p_DataJson);
         addKill({
             type: 'connect',
             playerName: p_DataJson.playerName,
@@ -111,6 +113,7 @@ const App: React.FC = () => {
     }
 
     window.OnLeft = (p_DataJson: any) => {
+        p_DataJson = JSON.parse(p_DataJson);
         addKill({
             type: 'left',
             playerName: p_DataJson.playerName,
