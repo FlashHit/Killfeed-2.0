@@ -16,3 +16,5 @@ A new killfeed that displays more information.
 ![](https://community.veniceunleashed.net/uploads/default/original/2X/2/2af66d98351f0847bd5d6d76c481663136d00804.jpeg)
 ![](https://community.veniceunleashed.net/uploads/default/original/2X/1/1cd6fd4fb78274f1de1b99ac9cef9f6dae87dc4b.jpeg)
 
+[This mod on the VU discussion site](community.veniceunleashed.net/t/killfeed-2-0)
+
