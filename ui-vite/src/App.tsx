@@ -10,20 +10,15 @@ import roadkillIcon from './assets/img/broken-bone.png';
  * Debug
  */
 
-/*
 let debugMode: boolean = false;
-if (!navigator.userAgent.includes('VeniceUnleashed')) {
-    if (window.location.ancestorOrigins === undefined || window.location.ancestorOrigins[0] !== 'webui://main') {
-        debugMode = true;
-    }
+if (window.location.protocol !== 'webui:') {
+    debugMode = true;
 }
-*/
 
 const App: React.FC = () => {
     const [feed, setFeed] = useState<Kill[]>([]);
     const [showFeed, setShowFeed] = useState<boolean>(false);
 
-    /*
     const setRandomKill = () => {
         addKill({
             type: 'kill',
@@ -52,7 +47,6 @@ const App: React.FC = () => {
             playerRelation: 'friendly',
         });
     };
-    */
 
     const addKill = (kill: Kill) => {
         setFeed((prevState: Kill[]) => [kill, ...prevState.slice(0, 3)]);
@@ -117,13 +111,13 @@ const App: React.FC = () => {
 
     return (
         <>
-            {/*
             {debugMode ? (
                 <style
                     dangerouslySetInnerHTML={{
                         __html: `
                     body {
-                        background: #333;
+                        background: #333 url('https://infinitemirai.wordpress.com/wp-content/uploads/2014/11/screenshotwin32-0368.jpg');
+                        background-size: 100% 100%;
                     }
 
                     #debug {
@@ -145,9 +139,8 @@ const App: React.FC = () => {
                     Random Leave
                 </a>
             </div>
-            */}
             <div id="VuKillfeed" className={showFeed ? 'showFeed' : ''}>
-                {feed.map((kill: Kill, index: number) => (
+                {feed.reverse().map((kill: Kill, index: number) => (
                     <div className="feedItem" key={index}>
                         {kill.type === 'kill' ? (
                             <>

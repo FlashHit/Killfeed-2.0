@@ -26,10 +26,6 @@ NetEvents:Subscribe('Killfeed', function(p_Args)
 		return
 	end
 	
-	if s_LocalPlayer.name == s_PlayerName or s_LocalPlayer.name == s_InflictorName then
-		return
-	end
-	
 	local s_PlayerRelation = GetPlayerRelation(s_LocalPlayer.teamId, s_LocalPlayer.squadId, s_PlayerTeam, s_PlayerSquad)
 	local s_InflictorRelation = GetPlayerRelation(s_LocalPlayer.teamId, s_LocalPlayer.squadId, s_InflictorTeam, s_InflictorSquad)
 

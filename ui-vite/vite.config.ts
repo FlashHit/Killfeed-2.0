@@ -7,7 +7,7 @@ export default defineConfig({
     plugins: [
         react(),
         vext({
-            outputPath: './',
+            outputPath: '../',
         }),
     ],
     base: './', // Important for relative paths in Gameface

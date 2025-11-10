@@ -13,11 +13,15 @@ html {
     font-size: 10px;
 }
 
+:root {
+    --shadow-color: rgba(255, 255, 255, 1);
+}
+
 body,
 html {
     padding: 0;
     margin: 0;
-    color: #fff;
+    color: #ebf1f6;
     font-family: 'bffont';
     font-weight: 400;
     overflow: hidden;
@@ -70,15 +74,19 @@ h6 {
         align-items: center;
         justify-content: flex-end;
 
+        * {
+            text-shadow: 0 0 2rem var(--shadow-color), 0 0 5rem var(--shadow-color), 0 0 10rem var(--shadow-color);
+        }
+
         .weapon {
             margin: 0 10rem;
-            text-shadow: #fff 0 0 10rem;
         }
 
         .icon {
             margin: 0 0 0 5rem;
             width: 16rem;
             height: 16rem;
+            filter: drop-shadow(0 0 5rem #fff);
 
             img {
                 width: 16rem;
@@ -87,18 +95,18 @@ h6 {
         }
 
         .relationEnemy {
-            color: #ffa640;
-            text-shadow: #ff6a05 0 0 15rem;
+            --shadow-color: rgb(255, 94, 0);
+            color: rgb(255, 206, 172);
         }
 
         .relationSquad {
-            color: #d6ff73;
-            text-shadow: #2dff00 0 0 15rem;
+            --shadow-color: rgb(170, 255, 59);
+            color: rgba(183, 255, 158, 1);
         }
 
         .relationFriendly {
-            color: #56e3f3;
-            text-shadow: #2188b1 0 0 15rem;
+            --shadow-color: rgb(30 173 255);
+            color: rgb(144, 242, 255);
         }
     }
 }
